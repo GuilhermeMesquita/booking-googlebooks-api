@@ -4,12 +4,12 @@ window.onload = () => {
     $(section_res).hide();
 }
 
-var icon = '<i class="fas fa-book-open"></i>';
+var icon = '<i class="fas fa-book-open main-color-theme" id="book"></i>';
 
 document.getElementById("submit_search").addEventListener("click", function () {
     let input_search = document.querySelector("#text_search").value;
     if (input_search == "") {
-        alert("Provisório!");
+        showAlert();
     } else {
 
         let card = document.querySelector("#main_card");
@@ -36,16 +36,27 @@ document.getElementById("submit_search").addEventListener("click", function () {
                     var url_book = obj.items[i].volumeInfo.infoLink;
 
 
-                    if (title == undefined) title = "<b>Error 404 - title not found</b>";
-                    if (author == undefined) author = "<b>Error 404 - author not found</b>";
-                    if (date == undefined) date = "<b>Error 404 - date not found</b>";
-                    if (publisher == undefined) publisher = "<b>Error 404 - publisher not found</b>";
-                    if (url_book == undefined) url_book = "<b>Error 404 - url_book not found</b>";
+                    if (title == undefined) title = "<b>title not found</b>";
+                    if (author == undefined) author = "<b>author not found</b>";
+                    if (date == undefined) date = "<b>date not found</b>";
+                    if (publisher == undefined) publisher = "<b>publisher not found</b>";
+                    if (url_book == undefined) url_book = "<b>url_book not found</b>";
 
 
                     $(section_res).show();
                     section_res.innerHTML +=
-                        `<div class='card res_livros w-shadow'><table><tr>${title}</tr><tbody></tbody><tr><td>${author}</td></tr><tr><td>${publisher}</td></tr><tr><td>${date}</td></tr><tr><td><a href="${url_book}">Saiba mais... ${icon}</td></tr></tbody></table></div>`
+                        `<div class="card w-shadow" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">${title}</h5>
+                                <p class="card-subtitle text-muted">${author}</p>
+                                <p class="card-subtitle text-muted">${publisher}</p>
+                                <p class="card-subtitle">${date}</p>
+                                <br>
+                                <a href="${url_book}" target="_blank" class="btn btn-outline-primary btn-s-m main-color-theme" style="float: right;">See more... ${icon}</a>
+                            </div>
+                        </div>`
+
+                    // `< div class='card res_livros w-shadow' > <table><tr>${title}</tr><tbody></tbody><tr><td>${author}</td></tr><tr><td>${publisher}</td></tr><tr><td>${date}</td></tr><tr><td><a href="${url_book}">Saiba mais... ${icon}</td></tr></tbody></table></div > `
                 }
 
                 $(search_section).hide();

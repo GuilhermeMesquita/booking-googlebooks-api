@@ -20,6 +20,12 @@
 </head>
 
 <body>
+    <div class="alerts">
+        <div class="alert alert-warning collapse" id="alert-error">
+            <a href="#" class="close" data-dismiss="alert">&times;</a>
+            <strong>Error! </strong> You need to type a book <b>title</b>.
+        </div>
+    </div>
     <section id="search_section">
         <div class="card w-50">
             <div class="card-body w-shadow" id="main_card">
@@ -29,7 +35,7 @@
                 <input type="text" name="text_search" id="text_search" class="form-control"
                     placeholder="Ex: Harry Potter">
                 <br>
-                <button id="submit_search" class="form-control w-20 main-color-theme">Submit</button>
+                <button id="submit_search" class="form-control w-20 main-color-theme">Search</button>
                 <br>
                 <br>
                 <p class="text-muted">Developed with <i class="fas fa-heart ico"></i> by
@@ -41,9 +47,12 @@
         </div>
     </section>
 
-    <section id="res">
+    <section id="res" class="res_livros">
     </section>
+
+
     <script src="./js/requisitionFuncs.js"></script>
+    <script src="./js/messagesFuncs.js"></script>
 </body>
 
 </html>

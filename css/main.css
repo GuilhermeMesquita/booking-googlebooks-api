@@ -4,6 +4,11 @@
     --cor-fonte-hover: #FFF;
 }
 
+/* Error Alert */
+.alert {
+    text-align: center;
+}
+
 /* Section Search */
 .w-shadow{
     -webkit-box-shadow: 0px 11px 34px -8px rgba(0,0,0,0.75);
@@ -53,7 +58,17 @@
     flex-direction: column;
     text-align: center;
     width: 40vw;
-    margin: 5px auto 5px auto;
+    margin: 5px auto 10% auto;
     padding:5px;
     border-radius: 20px;
+}
+
+#book {
+    color: var(--cor_principal);
+}
+
+.btn-s-m:hover {
+    background-color: var(--cor_principal);
+    color: var(--cor-fonte-hover);
+    transition: all 1s ease;
 }
